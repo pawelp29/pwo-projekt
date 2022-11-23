@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class ProductList {
     public ArrayList<Product> list = new ArrayList<>();
-    public ArrayList<String> categories; 
+    public ArrayList<String> categories = new ArrayList<>(); 
     
     public ProductList() {
         
