@@ -10,11 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 /**
+ * Klasa testująca obliczanie wartości odżywczej
  *
  * @author pawelp
  */
 public class CalculatorTest {
-    
+
     @Test
     void calculatorTest() {
         System.out.println("Wartość odżywcza:");
@@ -27,5 +28,5 @@ public class CalculatorTest {
         BigDecimal result = BigDecimal.valueOf(Calculator.calculate(list));
         assertEquals(expResult, result);
     }
-    
+
 }
