@@ -9,7 +9,8 @@ import java.util.ArrayList;
  * @author madej
  */
 public class ProductList {
-    public ArrayList<Product> list = new ArrayList<>(); 
+    public ArrayList<Product> list = new ArrayList<>();
+    public ArrayList<String> categories; 
     
     public ProductList() {
         
@@ -22,6 +23,9 @@ public class ProductList {
                 String[] values = line.split(";");
                 list.add(new Product(values[0], Float.parseFloat(values[1]), Float.parseFloat(values[2]),
                                      Float.parseFloat(values[3]), values[4]));
+                if(!categories.contains(values[4])) {
+                    categories.add(values[4]);
+                }
             }
         } catch(Exception e) {
             System.out.println(e);
