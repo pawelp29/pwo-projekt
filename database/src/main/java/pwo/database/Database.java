@@ -12,6 +12,9 @@ package pwo.database;
 public class Database {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        ProductList cositem = new ProductList();
+        cositem.getListFromFile("/home/madej/Pulpit/products.csv");
+        // System.out.println(cositem.list.get(0).name + " " + cositem.list.get(0).carbs + " " + cositem.list.get(0).category);
+        cositem.getProducts(null);
     }
 }
