@@ -32,11 +32,21 @@ public class ProductList {
         }
     }
     
-    public void getProducts(String category) {
+    public void displayProductsByCategory(String category) {
         for (Product product : list) {
             if(category == null || category.equals(product.category)) {
                 System.out.println("(" + (list.indexOf(product)+1) + ") " + product.name);
             }
         }
+    }
+    
+    public ArrayList<Product> getProducts(String category) {
+        ArrayList<Product> productsByCategory = new ArrayList<>();
+        for (Product product : list) {
+            if(category.equals(product.category)) {
+                productsByCategory.add(product);
+            }
+        }
+        return productsByCategory;
     }
 }
