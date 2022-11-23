@@ -4,6 +4,7 @@
  */
 
 package pwo.calculator;
+import java.util.ArrayList;
 
 /**
  *
@@ -11,7 +12,25 @@ package pwo.calculator;
  */
 public class Calculator {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
+//    public static void main(String[] args) {
+//        System.out.println("Hello World!");
+//    }
+    private static final String INFO = "Kalkulator wartości odżywczej";
+    private static final int CARBOHYDRATES = 4;
+    private static final int PROTEINS = 4;
+    private static final int FATS = 9;
+
+    public static String getInfo() {
+        return INFO;
+    }
+    
+    public static double calculate(ArrayList<EatenProduct> productList) {
+        double result = 0;
+        for (EatenProduct p: productList) {
+            result += (CARBOHYDRATES * p.carbs
+                    + PROTEINS * p.protein
+                    + FATS * p.fats) * p.amount;
+        }
+        return result;
     }
 }
