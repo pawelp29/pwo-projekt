@@ -55,7 +55,7 @@ public class Console {
         for (int i = 0; i < list.categories.size(); i++) {
             System.out.println("(" + (i + 1) + ") " + list.categories.get(i));
         }
-        System.out.println("(0) ZAKOŃCZ");
+        System.out.println("(0) Pokaż wynik i ZAKOŃCZ");
         System.out.println("Podaj wybrany numer:");
         Scanner kat = new Scanner(System.in);
         nrkat = kat.nextInt();
