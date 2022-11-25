@@ -19,8 +19,8 @@ public class CalculatorTest {
     @Test
     void calculatorTest() {
         System.out.println("Wartość odżywcza:");
-        EatenProduct product1 = new EatenProduct("kiełbasa", 10, 25, 15, "mięso", 3);
-        EatenProduct product2 = new EatenProduct("chleb", 20, 2, 2, "zbożowe", 2);
+        EatenProduct product1 = new EatenProduct("kiełbasa", 25, 15, 10, "mięso", 300);
+        EatenProduct product2 = new EatenProduct("chleb", 2, 2, 20, "zbożowe", 200);
         ArrayList<EatenProduct> list = new ArrayList();
         list.add(product1);
         list.add(product2);
