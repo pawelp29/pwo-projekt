@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 /**
- *
+ * Klasa testów do modułu bazy danych; sprawdzana jest poprawność
+ * pobranych z pliku i zapisanych w strukturze danych.
+ * 
  * @author madej
  */
 public class ProductListTest {

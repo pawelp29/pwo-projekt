@@ -1,7 +1,8 @@
 package pwo.database;
 
 /**
- *
+ * Klasa pojedynczego produktu zawierająca istotne informacje o nim.
+ * 
  * @author madej
  */
 public class Product {
@@ -20,6 +21,10 @@ public class Product {
         category = productCategory;
     }
     
+    /**
+     * Funkcja wypisująca wszystkie dane konkretnego produktu,
+     * pola są podpisane.
+    */
     public void displayRawProductData() {
         System.out.println("Product: [name: " + name + ", carbs: " + carbs + ", protein: " +protein +
                            ", fats: " + fats + ", category: " + category + "]");

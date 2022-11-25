@@ -5,7 +5,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 /**
- *
+ * Klasa listy produktów, zawierająca metody do pobierania danych
+ * produktów z pliku oraz wyświetlania informacji o nich.
+ * 
  * @author madej
  */
 public class ProductList {
@@ -16,6 +18,12 @@ public class ProductList {
         
     }
     
+    /**
+     * Metoda pobierająca dane produktów z pliku o podanej nazwie
+     * jako strukturę danych w parametrze klasy.
+     * 
+     * @param fileName
+     */
     public void getListFromFile(String fileName) {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
@@ -32,6 +40,11 @@ public class ProductList {
         }
     }
     
+    /**
+     * Metoda wyświetlająca w konsoli id oraz nazwy produktów z listy.
+     * 
+     * @param category 
+     */
     public void displayProductsByCategory(String category) {
         for (Product product : list) {
             if(category == null || category.equals(product.category)) {
@@ -40,6 +53,12 @@ public class ProductList {
         }
     }
     
+    /**
+     * Metoda zwracająca dane wszystkich produktów z podanej kategorii.
+     * 
+     * @param category
+     * @return 
+     */
     public ArrayList<Product> getProducts(String category) {
         ArrayList<Product> productsByCategory = new ArrayList<>();
         for (Product product : list) {
