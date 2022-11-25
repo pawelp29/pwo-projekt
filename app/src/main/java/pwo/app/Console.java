@@ -12,43 +12,46 @@ import pwo.database.Product;
 import pwo.database.ProductList;
 
 /**
- *
+ * Klasa obsługująca wyświetlanie interfejsu i wyniku końcowego
  * @author wercia
  */
 public class Console {
-    public ArrayList<EatenProduct>itemki = new ArrayList<>();
-    private int selectProduct(int nrprod, int nrkat, ProductList list){
+
+    private ArrayList<EatenProduct> itemki = new ArrayList<>();
+
+    private int selectProduct(int nrprod, int nrkat, ProductList list) {
         int ilosc;
         System.out.println("DOSTĘPNE PRODUKTY:");
-                list.displayProductsByCategory(list.categories.get(nrkat - 1));
-                System.out.println("(0) ZAKOŃCZ");
-                System.out.println("Podaj wybrany numer:");
-                Scanner prod = new Scanner(System.in);
-                nrprod = prod.nextInt();
+        list.displayProductsByCategory(list.categories.get(nrkat - 1));
+        System.out.println("(0) ZAKOŃCZ");
+        System.out.println("Podaj wybrany numer:");
+        Scanner prod = new Scanner(System.in);
+        nrprod = prod.nextInt();
 
-                while ((nrprod > 0 && !list.list.get(nrprod - 1).category.equals(list.categories.get(nrkat - 1))) || (nrprod < 0)) {
-                    System.out.println("Niepoprawny numer produktu. "
-                            + "Podaj poprawną wartość");
-                    nrprod = prod.nextInt();
-                }
-                if (nrprod != 0) {
-                    System.out.println("Wybrałeś produkt numer " + nrprod);
-                    System.out.println("Podaj ilość produktu w gramach:");
-                    Scanner ileprod = new Scanner(System.in);
-                    ilosc = ileprod.nextInt();
-                    while (ilosc < 0) {
-                        System.out.println("Ilość produktu nie może być ujemna. "
-                                + "Podaj prawidłową wartość.");
-                        ilosc = ileprod.nextInt();
-                    }
-                    Product product = list.list.get(nrprod - 1);
-                    EatenProduct doDodania = new EatenProduct(product.name, product.protein, product.fats, product.carbs, product.category, ilosc);
-                    itemki.add(doDodania);
-                } else {
-                    System.out.println("Wróciłeś do wyboru kategorii.");
-                }
-                return nrprod;
+        while ((nrprod > 0 && !list.list.get(nrprod - 1).category.equals(list.categories.get(nrkat - 1))) || (nrprod < 0)) {
+            System.out.println("Niepoprawny numer produktu. "
+                    + "Podaj poprawną wartość");
+            nrprod = prod.nextInt();
+        }
+        if (nrprod != 0) {
+            System.out.println("Wybrałeś produkt numer " + nrprod);
+            System.out.println("Podaj ilość produktu w gramach:");
+            Scanner ileprod = new Scanner(System.in);
+            ilosc = ileprod.nextInt();
+            while (ilosc < 0) {
+                System.out.println("Ilość produktu nie może być ujemna. "
+                        + "Podaj prawidłową wartość.");
+                ilosc = ileprod.nextInt();
+            }
+            Product product = list.list.get(nrprod - 1);
+            EatenProduct doDodania = new EatenProduct(product.name, product.protein, product.fats, product.carbs, product.category, ilosc);
+            itemki.add(doDodania);
+        } else {
+            System.out.println("Wróciłeś do wyboru kategorii.");
+        }
+        return nrprod;
     }
+
     private int selectCategory(int nrkat, ProductList list) {
         int ilekat = list.categories.size();
         System.out.println("KATEGORIE PRODUKTÓW:");
@@ -80,11 +83,13 @@ public class Console {
         return nrkat;
     }
 
+    /**
+     * Metoda wyświetlająca interfejs
+     */
     public void execute() {
         ProductList list = new ProductList();
         list.getListFromFile("./products.csv");
         int nrkat = -1;
-        // System.out.println(cositem.list.get(0).name + " " + cositem.list.get(0).carbs + " " + cositem.list.get(0).category);
         while (nrkat != 0) {
             nrkat = selectCategory(nrkat, list);
         }
