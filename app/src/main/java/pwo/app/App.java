@@ -5,11 +5,15 @@
 package pwo.app;
 
 /**
- *
+ * Klasa aplikacji
  * @author weronika
  */
 public class App {
-
+    
+    /**
+     * Główna metoda programu
+     * @param args
+     */
     public static void main(String[] args) {
         Console consoleApp = new Console();
         consoleApp.execute();
