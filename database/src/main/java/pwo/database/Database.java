@@ -1,7 +1,8 @@
 package pwo.database;
 
 /**
- *
+ * Główna klasa modułu bazy danych.
+ * 
  * @author madej
  */
 public class Database {
