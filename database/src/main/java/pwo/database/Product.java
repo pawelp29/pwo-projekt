@@ -8,16 +8,16 @@ package pwo.database;
 public class Product {
     public String name,
                   category;
-    public float carbs,
-                 protein,
-                 fats;
+    public float protein,
+                 fats,
+                 carbs;
     
-    public Product(String productName, float productCarbs, float productProtein,
-                   float productFats, String productCategory) {
+    public Product(String productName, float productProtein , float productFats,
+                   float productCarbs, String productCategory) {
         name = productName;
-        carbs = productCarbs;
         protein = productProtein;
         fats = productFats;
+        carbs = productCarbs;
         category = productCategory;
     }
     
@@ -26,7 +26,7 @@ public class Product {
      * pola są podpisane.
     */
     public void displayRawProductData() {
-        System.out.println("Product: [name: " + name + ", carbs: " + carbs + ", protein: " +protein +
-                           ", fats: " + fats + ", category: " + category + "]");
+        System.out.println("Product: [name: " + name + ", protein: " +protein + ", fats: " + fats +
+                           ", carbs: " + carbs + ", category: " + category + "]");
     }
 }
