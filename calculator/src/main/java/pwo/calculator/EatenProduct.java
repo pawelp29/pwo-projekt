@@ -22,15 +22,15 @@ public class EatenProduct extends Product {
      * Konstruktor klasy spożytego produktu
      *
      * @param productName nazwa produktu
-     * @param productCarbs zawartość węglowodanów na 100 g produktu
      * @param productProtein zawartość białka na 100 g produktu
      * @param productFats zawartość tłuszczów na 100 g produktu
+     * @param productCarbs zawartość węglowodanów na 100 g produktu
      * @param productCategory nazwa kategorii
      * @param amount ilość w gramach
      */
-    public EatenProduct(String productName, float productCarbs, float productProtein,
-            float productFats, String productCategory, int amount) {
-        super(productName, productCarbs, productProtein, productFats, productCategory);
+    public EatenProduct(String productName, float productProtein,
+            float productFats, float productCarbs, String productCategory, int amount) {
+        super(productName, productProtein, productFats, productCarbs, productCategory);
         this.amount = amount;
     }
 }

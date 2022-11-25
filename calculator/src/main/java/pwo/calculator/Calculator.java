@@ -36,9 +36,9 @@ public class Calculator {
     public static double calculate(ArrayList<EatenProduct> productList) {
         double result = 0;
         for (EatenProduct p : productList) {
-            result += (CARBOHYDRATES * p.carbs
+            result += ((CARBOHYDRATES * p.carbs
                     + PROTEINS * p.protein
-                    + FATS * p.fats) * p.amount;
+                    + FATS * p.fats) * p.amount) / 100;
         }
         return result;
     }
